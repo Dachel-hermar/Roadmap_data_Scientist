@@ -34,12 +34,12 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 
 ## 🚧 En Foco Hoy (Sesión Actual)
 - [x] Bucle `while` (Iteraciones basadas en condiciones, no en longitud).
+- [x] Funciones personalizadas (`def`): Enseñar a la máquina a crear nuestros propios comandos.
+- [x] Manejo de Errores Estructurado (`try` / `except`).
 
 ---
 
 ## 🎯 Próximos Pasos (Lo que nos espera)
-- [ ] Funciones personalizadas (`def`): Enseñar a la máquina a crear nuestros propios comandos.
-- [ ] Manejo de Errores Estructurado (`try` / `except`).
 - [ ] **Semanas 5-8:** Mini-proyectos integradores (Programas completos orientados a objetos o scripts funcionales).
 - [ ] **Semanas 9-12:** Bases de Datos y SQL Profundo.
 
