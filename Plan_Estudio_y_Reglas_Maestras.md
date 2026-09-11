@@ -28,6 +28,7 @@ Más allá de la sintaxis y el código, el objetivo fundamental de todo este Roa
 10. **Aprendizaje Acumulativo Espaciado:** Los conocimientos no se archivan. Al aprender un tema nuevo (ej. bucle `while`), los ejercicios y bootcamps obligatoriamente integrarán las estructuras de datos pasadas (ej. Diccionarios y JSON). Esto fuerza el repaso diario y evita dejar el conocimiento atrás.
 11. **El Bootcamp de Integración (La Forja):** Antes de saltar de la teoría pura a la fase anárquica de los "Mini-Proyectos", obligatoriamente se debe realizar una ráfaga de 10 ejercicios incrementales (El Bootcamp). Esto sirve para desarrollar "Code Taste" y consolidar la memoria muscular de la sintaxis pura.
 12. **Vocabulario Técnico y Estadístico:** A medida que se aprenden conceptos de código (ej. un `int` o `float`), se enseñará y exigirá su nombre estadístico real (ej. Variables Cuantitativas Discretas vs Continuas, Ordinales vs Cardinales). El objetivo es que logres expresarte y debatir como un Científico de Datos nativo del mundo real.
+13. **Simulacros de Entrevista Técnica (El Fogueo):** Al finalizar cada hito o Bootcamp, nos detendremos a hacer "Mini-Entrevistas". Yo actuaré como Reclutador Técnico / Lead Data Scientist y te haré preguntas de negocio reales sacadas de ofertas de LinkedIn. El objetivo es que aprendas a vender tu lógica y a pensar bajo presión.
 
 ---
 
