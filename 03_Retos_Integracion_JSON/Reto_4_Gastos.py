@@ -19,15 +19,6 @@ for dato in transacciones:
         gastos_agrupados[categoria]+=monto
     else:
         gastos_agrupados[categoria]=monto
-        
-
-
-    
-      
-           
-       
-
-
 
 # 3. Imprime el reporte financiero agrupado
 print(gastos_agrupados)

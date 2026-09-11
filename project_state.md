@@ -33,13 +33,11 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 ---
 
 ## 🚧 En Foco Hoy (Sesión Actual)
-- [x] Refinar la manipulación de Diccionarios y Listas híbridas (Bootcamp Nivel 2 completado).
-- [x] Superar los 6 Retos de Integración (JSON en el mundo real).
+- [x] Bucle `while` (Iteraciones basadas en condiciones, no en longitud).
 
 ---
 
 ## 🎯 Próximos Pasos (Lo que nos espera)
-- [ ] Bucle `while` (Iteraciones basadas en condiciones, no en longitud).
 - [ ] Funciones personalizadas (`def`): Enseñar a la máquina a crear nuestros propios comandos.
 - [ ] Manejo de Errores Estructurado (`try` / `except`).
 - [ ] **Semanas 5-8:** Mini-proyectos integradores (Programas completos orientados a objetos o scripts funcionales).
