@@ -1,0 +1,8 @@
+fecha,producto,cliente,precio
+2026-09-13,Laptop,carlos@gmail.com,1200
+2026-09-13,Teclado,ana@hotmail.com,50
+2026-09-13,Mouse,carlos@gmail.com,20
+2026-09-13,Monitor,luis@empresa.com,300
+2026-09-13,Cable HDMI,ana@hotmail.com,15
+2026-09-13,Silla Gamer,pedro@yahoo.com,250
+2026-09-13,Mousepad,carlos@gmail.com,10
