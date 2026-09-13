@@ -3,9 +3,9 @@
 Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final de cada sesión para saber exactamente dónde estamos, qué hemos logrado y qué nos falta por conquistar.
 
 ## 📍 Estado Actual General
-- **Fase Actual:** Fase 3 (Lenguajes y Algoritmia)
-- **Bloque:** Python Profundo (Sintaxis y lógica dura)
-- **Estado de la Sesión:** Completado con Honores (Listas + JSON Dominados)
+- **Fase Actual:** Fase 3 (Lenguajes y Algoritmia) - Semanas 5-8
+- **Bloque:** Mini-Proyectos Integradores
+- **Estado de la Sesión:** Bootcamp de Integración (10/10) Completado con Máxima Distinción.
 
 ---
 
@@ -16,26 +16,23 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 - [x] Fundamentos abstractos: Acumuladores, Contadores, "Variable Campeón" (Min/Max).
 - [x] Escritura de pseudocódigo en lenguaje natural.
 
-### Fase 3: Python Profundo (En Progreso)
+### Fase 3: Python Profundo - Sintaxis (Completado)
 - [x] Tipos de datos primitivos (`int`, `float`, `str`, `bool`) y Conversión (`casting`).
 - [x] Entradas y Salidas (`input`, `print`, *f-strings*).
 - [x] Condicionales (`if`, `elif`, `else`) y operadores lógicos.
-- [x] Bucles Básicos: `for item in lista` (Bucle de lectura).
-- [x] Bucles Espaciales: `for i in range(len(lista))` (Modificación y lectura de índices).
-- [x] Control de Flujo Avanzado: `break`, `continue`, y estructura `For-Else`.
-- [x] Listas: Extracción directa (`lista[0]`, `lista[-1]`) e inyección (`.append()`).
-- [x] Diccionarios (Básico): Creación `{}` y actualización dinámica de valores (`dict[clave] += 1`).
-- [x] Extracción de Diccionarios: Uso del método `.items()`.
-- [x] Formato JSON: Filtros y extracción de Listas que contienen Diccionarios.
-- [x] Depuración: Identificación de `TypeError`, `ValueError`, `IndexError` y "Código Muerto".
-- [x] Control de Versiones: Inicialización de `git` y primer push a GitHub.
+- [x] Bucles Básicos y Espaciales (`for`, `range`, `while True`).
+- [x] Control de Flujo Avanzado: `break`, `continue`, `return`.
+- [x] Estructuras de Datos: Listas y Diccionarios (Operaciones CRUD completas).
+- [x] Formato JSON y Estructuras Anidadas (Diccionarios dentro de Listas).
+- [x] Funciones personalizadas (`def`) y Scope de variables.
+- [x] Manejo de Errores Estructurado (`try` / `except`).
+- [x] **La Forja:** 10 Ejercicios de Integración de Negocio superados.
 
 ---
 
-## 🚧 En Foco Hoy (Sesión Actual)
-- [x] Bucle `while` (Iteraciones basadas en condiciones, no en longitud).
-- [x] Funciones personalizadas (`def`): Enseñar a la máquina a crear nuestros propios comandos.
-- [x] Manejo de Errores Estructurado (`try` / `except`).
+## 🚧 En Foco Hoy (Próxima Sesión)
+- [ ] Transición de Scripts a Mini-Proyectos Funcionales (Semanas 5-8 del Roadmap).
+- [ ] Manipulación Avanzada de Strings (Limpieza de Datos / NLP Básico).
 
 ---
 
