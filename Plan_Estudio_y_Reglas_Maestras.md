@@ -66,7 +66,8 @@ Hemos fusionado tus Fases temporales con los "Stages" temáticos para crear un c
 - Evaluación de Modelos & Hyperparameter Tuning (Stage 12).
 - Aplicación de Git a los proyectos anteriores para refactorizarlos y prepararlos para el mundo real.
 
-### 🚀 Fase 6: Especialización y Vanguardia (Mes 11 - Mes 12)
-*Objetivo: IA Avanzada y adaptación al mercado.*
-- **Mes 11:** Deep Learning (PyTorch/TensorFlow - Stage 13) y NLP (Stage 12/14).
-- **Mes 12:** Desarrollar con Agentes de IA. Aprender a usar la IA como copiloto para tareas pesadas, integrando todo tu conocimiento base para ir a la velocidad que exige el mercado actual.
+### 🚀 Fase 6: Especialización, Big Data y Vanguardia (Mes 11 - Mes 12)
+*Objetivo: Escalar el procesamiento, IA Avanzada y adaptación al mercado.*
+- **Big Data & Computación Distribuida:** Introducción a **PySpark y MLlib** (Superando el límite de memoria RAM de Scikit-Learn/Pandas procesando datos en clústeres).
+- **Redes Neuronales:** Deep Learning (PyTorch/TensorFlow - Stage 13) y NLP (Stage 12/14).
+- **Desarrollo AI:** Desarrollar con Agentes de IA. Aprender a usar la IA como copiloto para tareas pesadas, integrando todo tu conocimiento base para ir a la velocidad que exige el mercado actual.

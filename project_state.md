@@ -30,14 +30,17 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 
 ---
 
-## 🚧 En Foco Hoy (Próxima Sesión)
-- [ ] Transición de Scripts a Mini-Proyectos Funcionales (Semanas 5-8 del Roadmap).
-- [ ] Manipulación Avanzada de Strings (Limpieza de Datos / NLP Básico).
+## 🚧 En Foco Hoy (Mini-Proyectos)
+- [x] Proyecto 01: Purificador de Correos (Sets, File Handling "r"/"w").
+- [x] Proyecto 02: Analizador Financiero (ETL, CSV parsing, strip/split).
+- [x] Proyecto 03: Arquitectura CRUD Avanzada (JSON, Diccionarios y Archivos).
+- [x] Proyecto 04: Filtro de Seguridad (Listas de Diccionarios, JSON, Filtrado Condicional).
+- [x] Proyecto 05: Analizador de Sentimiento NLP (Contador de Frecuencias con Diccionarios).
 
 ---
 
 ## 🎯 Próximos Pasos (Lo que nos espera)
-- [ ] **Semanas 5-8:** Mini-proyectos integradores (Programas completos orientados a objetos o scripts funcionales).
+- [ ] **Semanas 5-8 (El Gran Bautizo):** Desarrollar un total de **10 Mini-Proyectos** de Nivel Portafolio. Requisito estricto: Alta carga cognitiva, 0 tutoriales, 100% integrando todo (CRUD, JSON, Diccionarios, File Handling).
 - [ ] **Semanas 9-12:** Bases de Datos y SQL Profundo.
 
 ---

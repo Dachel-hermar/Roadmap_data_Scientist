@@ -1,0 +1,22 @@
+{
+    "LAPTOP-001": {
+        "nombre": "MacBook Pro M2",
+        "stock": 5,
+        "precio_usd": 2000
+    },
+    "MONITOR-002": {
+        "nombre": "LG UltraWide",
+        "stock": 12,
+        "precio_usd": 300
+    },
+    "TECLADO-003": {
+        "nombre": "Keychron K2",
+        "stock": 6,
+        "precio_usd": 100
+    },
+    "MOUSE-004": {
+        "nombre": "Logitech MX Master",
+        "stock": 10,
+        "precio_usd": 99
+    }
+}

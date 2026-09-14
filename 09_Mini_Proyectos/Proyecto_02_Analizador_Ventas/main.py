@@ -36,6 +36,46 @@ Construye una función 'analizar_corte(ruta_entrada, ruta_salida)' que:
 # ==========================================
 # ESCRIBE TU ARQUITECTURA AQUÍ ABAJO
 # ==========================================
+def analizar_corte(ruta_entrada, ruta_salida):
+    """
+      Lee un archivo de texto con las ventas diarias, purifica la data (elimina duplicados, 
+      espacios vacíos y mayúsculas) usando un Set, y escribe los resultados en un nuevo archivo.
+            
+       Args:
+          ruta_entrada (str): Ruta absoluta o relativa del archivo crudo a leer.
+          ruta_salida (str): Ruta absoluta o relativa donde se guardará el archivo limpio.
+                
+       Returns:
+             tuple: (total_facturacion, lista_correos)
+        """
+
+    with open(ruta_entrada,"r") as file:
+      lineas= file.readlines()
+      print(lineas)
+
+      # Como me escupe una lista de datos voy a recorrer la lista con un bucle for
+      correos_unicos = set()
+      dinero_total = 0
+      for linea in lineas:
+            listado_limpio = linea.strip().split(",")
+            if "precio" in listado_limpio:
+                  continue
+            correos_unicos.add(listado_limpio[2])
+            precio= int(listado_limpio[3]) 
+            dinero_total += precio
+    with open(ruta_salida, "w") as f:
+          for correo in correos_unicos:
+              f.write(f"{correo}\n")
+    return (dinero_total, len(correos_unicos))
+
+                
+    
+        
+        
+
+      
+         
+      
 
 
 
@@ -44,9 +84,12 @@ Construye una función 'analizar_corte(ruta_entrada, ruta_salida)' que:
 # ZONA DE PRUEBAS (QA)
 # ==========================================
 # Recuerda usar Rutas Absolutas con la "r" mágica de Windows.
-# ruta_crudos = r"..."
-# ruta_limpios = r"..."
+ruta_crudos = r"C:\Roadmap_data_Scientist\09_Mini_Proyectos\Proyecto_02_Analizador_Ventas\ventas_diarias.txt"
+ruta_limpios = r"C:\Roadmap_data_Scientist\09_Mini_Proyectos\Proyecto_02_Analizador_Ventas\total_facturado.txt"
 
 # 1. Llama a tu función.
+
 # 2. Atrapa la tupla en una variable.
+dinero, correos = analizar_corte(ruta_crudos, ruta_limpios)
 # 3. Imprime un reporte diciendo: "Hoy facturamos $____ de ____ clientes únicos."
+print(f'"Hoy facturamos ${dinero} de {correos} clientes únicos."')

@@ -1,0 +1,32 @@
+[
+    {
+        "usuario": "empleado_01",
+        "ip": "192.168.1.10",
+        "status": "SUCCESS",
+        "hora": "08:15:00"
+    },
+    {
+        "usuario": "empleado_02",
+        "ip": "192.168.1.15",
+        "status": "SUCCESS",
+        "hora": "08:17:30"
+    },
+    {
+        "usuario": "admin",
+        "ip": "45.22.19.100",
+        "status": "FAILED",
+        "hora": "03:14:12"
+    },
+    {
+        "usuario": "empleado_03",
+        "ip": "192.168.1.20",
+        "status": "SUCCESS",
+        "hora": "08:50:00"
+    },
+    {
+        "usuario": "admin",
+        "ip": "45.22.19.100",
+        "status": "FAILED",
+        "hora": "03:14:15"
+    }
+]
