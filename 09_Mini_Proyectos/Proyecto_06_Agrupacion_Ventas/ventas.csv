@@ -1,0 +1,9 @@
+id_venta,categoria,producto,precio
+V001,Electronica,Laptop,1200
+V002,Ropa,Camiseta,25
+V003,Electronica,Monitor,300
+V004,Hogar,Licuadora,50
+V005,Ropa,Pantalon,40
+V006,Electronica,Raton,20
+V007,Hogar,Sofa,400
+V008,Ropa,Zapatos,80

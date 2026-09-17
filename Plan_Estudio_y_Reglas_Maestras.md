@@ -54,9 +54,10 @@ Hemos fusionado tus Fases temporales con los "Stages" temáticos para crear un c
 ### 📊 Fase 4: Datos, Matemáticas y Proyectos (Mes 7 - Mes 9)
 *Objetivo: Construir el portafolio aplicando el ciclo de vida del dato.*
 - **Mes 7: Bases Científicas.** Matemáticas (Estadística, Probabilidad, Álgebra Lineal - Stage 4) + Numpy y Pandas (Stage 5) + Visualización de Datos (Stage 6).
+  - 🧠 **Fundamentos Científicos:** Creación y Testeo de Hipótesis (Inferencia Estadística, A/B Testing, Valores-P).
   - 🛠️ **Proyecto 1:** Automatizar algo de tu propia vida.
-- **Mes 8: Exploración y Limpieza.** Web Scraping (Stage 8), APIs (Stage 7), Limpieza y Análisis Exploratorio - EDA (Stage 9).
-  - 🛠️ **Proyecto 2:** End-to-End de Datos. Desde la obtención real, creación de metadata, limpieza, estadísticas, hasta la muestra de conclusiones de negocio.
+- **Mes 8: Exploración y Limpieza.** Web Scraping (Stage 8), APIs (Stage 7), Limpieza y Análisis Exploratorio - EDA (Stage 9). Validar hipótesis de negocio usando los datos limpios.
+  - 🛠️ **Proyecto 2:** End-to-End de Datos. Desde la obtención real, creación de metadata, limpieza, estadísticas, testeo de hipótesis, hasta la muestra de conclusiones de negocio.
 - **Mes 9: Modelado Base y Despliegue.** Feature Engineering (Stage 10) y Machine Learning con Scikit-Learn (Stage 11).
   - 🛠️ **Proyecto 3 (El Proyecto del Mes 9):** Combina todo lo anterior + Interfaz gráfica/Web/App. Debe ser entendible para un amigo no técnico. Será la punta de lanza de tu portafolio.
 

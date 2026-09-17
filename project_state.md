@@ -36,6 +36,8 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 - [x] Proyecto 03: Arquitectura CRUD Avanzada (JSON, Diccionarios y Archivos).
 - [x] Proyecto 04: Filtro de Seguridad (Listas de Diccionarios, JSON, Filtrado Condicional).
 - [x] Proyecto 05: Analizador de Sentimiento NLP (Contador de Frecuencias con Diccionarios).
+- [x] Proyecto 06: Motor de Agrupación Financiera (Simulador de 'GROUP BY' con Acumuladores y CSV).
+- [x] Proyecto FINAL OMEGA: Sistema CRM Analytics (Fusión de Proyectos 07 al 10). Integración absoluta: ETL, CSV, JSON, Menús interactivos (while True), try/except, Algoritmo del Campeón, Acumuladores y Sets.
 
 ---
 

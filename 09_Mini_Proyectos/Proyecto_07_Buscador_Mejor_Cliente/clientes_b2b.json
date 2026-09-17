@@ -1,0 +1,32 @@
+[
+    {
+        "id_cliente": "C001",
+        "nombre": "Empresa Alfa",
+        "ingresos": 50000,
+        "deuda_pendiente": 12000
+    },
+    {
+        "id_cliente": "C002",
+        "nombre": "Global Tech",
+        "ingresos": 120000,
+        "deuda_pendiente": 45000
+    },
+    {
+        "id_cliente": "C003",
+        "nombre": "Logistica Sur",
+        "ingresos": 30000,
+        "deuda_pendiente": 28000
+    },
+    {
+        "id_cliente": "C004",
+        "nombre": "Inversiones Omega",
+        "ingresos": 90000,
+        "deuda_pendiente": 5000
+    },
+    {
+        "id_cliente": "C005",
+        "nombre": "Constructora Zeta",
+        "ingresos": 15000,
+        "deuda_pendiente": 20000
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id_cliente": "C001",
+        "nombre": "Empresa Alfa",
+        "ingresos_historicos": 50000,
+        "deuda_pendiente": 12000
+    },
+    {
+        "id_cliente": "C002",
+        "nombre": "Global Tech",
+        "ingresos_historicos": 120000,
+        "deuda_pendiente": 45000
+    },
+    {
+        "id_cliente": "C003",
+        "nombre": "Logistica Sur",
+        "ingresos_historicos": 30000,
+        "deuda_pendiente": 28000
+    },
+    {
+        "id_cliente": "C004",
+        "nombre": "Inversiones Omega",
+        "ingresos_historicos": 90000,
+        "deuda_pendiente": 5000
+    }
+]
