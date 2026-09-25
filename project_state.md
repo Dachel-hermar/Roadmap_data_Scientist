@@ -42,8 +42,33 @@ Este documento sirve como nuestra brújula. Lo revisaremos al inicio y al final 
 ---
 
 ## 🎯 Próximos Pasos (Lo que nos espera)
-- [ ] **Semanas 5-8 (El Gran Bautizo):** Desarrollar un total de **10 Mini-Proyectos** de Nivel Portafolio. Requisito estricto: Alta carga cognitiva, 0 tutoriales, 100% integrando todo (CRUD, JSON, Diccionarios, File Handling).
-- [ ] **Semanas 9-12:** Bases de Datos y SQL Profundo.
+- [x] **Semanas 5-8 (El Gran Bautizo):** Desarrollar un total de **10 Mini-Proyectos** de Nivel Portafolio. Requisito estricto: Alta carga cognitiva, 0 tutoriales, 100% integrando todo (CRUD, JSON, Diccionarios, File Handling).
+- [x] **Semanas 9-12:** Bases de Datos y SQL Profundo.
+    - [x] Misiones de Fundamentos de Extracción.
+    - [x] Arquitectura de Metadatos (sqlite_master, PRAGMA).
+    - [x] Bootcamp Híbrido (10 Retos Corporativos fusionando Python y SQL).
+- [x] **Interludio: Sellado de Cimientos Core:**
+    - [x] Misión 1: La Prueba de Inmutabilidad (Tuplas y Sets).
+    - [x] Misión 2: El Basurero Corporativo (Data Wrangling y Slicing).
+    - [x] Misión 3: La Prisión de Variables (Scope Local, Global y Parámetros por Defecto).
+- [ ] **Fase 4 (Python Intermedio/Avanzado): OOP Profundo y Funcional**
+    - [ ] **Bloque 1: Fundamentos OOP (Aplicando Regla 3x3)**
+        - [x] Clases, Objetos, y constructor `__init__`.
+        - [x] Métodos de Instancia y el parámetro `self`.
+        - [ ] *Reto 3x3:* 3 Ejercicios de negocio para asimilar Clases básicas.
+    - [ ] **Bloque 2: Arquitectura OOP Avanzada**
+        - [x] Encapsulamiento (Atributos Privados y Públicos `__`).
+        - [x] Herencia y la función `super()`.
+        - [x] Polimorfismo.
+        - [x] Métodos Dunder/Mágicos (`__str__`, `__len__`).
+        - [x] Decoradores y ClassMethods (`@property`, `@staticmethod`).
+    - [ ] **Bloque 3: Ecosistema Funcional y Arquitectura**
+        - [x] Funciones Lambda y List Comprehensions.
+        - [x] Funciones `map()`, `filter()`, y `reduce()`.
+        - [x] Manejo Masivo: Generadores (`yield`).
+        - [x] Módulos (`import`), Entornos Virtuales (`venv`) y `pip`.
+    - [ ] **Bootcamp Final OOP:** Proyecto integrador orientando a objetos.
+- [ ] **Siguiente Frontera (Fase 5): Pandas y Análisis de Datos Estructurado**
 
 ---
 

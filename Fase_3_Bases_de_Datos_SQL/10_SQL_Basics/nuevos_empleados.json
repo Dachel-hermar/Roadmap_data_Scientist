@@ -1,0 +1,24 @@
+[
+    {
+        "id_empleado": 6,
+        "perfil": {
+            "nombre_completo": "Fernando Torres",
+            "area_asignada": "IT"
+        },
+        "finanzas": {
+            "salario_base": 58000
+        },
+        "fecha_ingreso": "2024-05-10"
+    },
+    {
+        "id_empleado": 7,
+        "perfil": {
+            "nombre_completo": "Lucia Mendez",
+            "area_asignada": "Ventas"
+        },
+        "finanzas": {
+            "salario_base": 47000
+        },
+        "fecha_ingreso": "2024-06-01"
+    }
+]

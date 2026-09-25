@@ -4,11 +4,14 @@
 
 Este repositorio no es solo una colección de scripts; es un **Diario de Arquitectura de Datos** donde documento mis procesos lógicos, depuración de errores y resolución de problemas de negocio reales.
 
-## 🧠 Metodología de Estudio
-Trabajo bajo reglas estrictas que simulan un entorno profesional real:
-- **La Regla del 3x3:** Por cada 3 conceptos técnicos nuevos, desarrollo 3 algoritmos para solidificarlos.
-- **Mentalidad QA (Quality Assurance):** Todo el código escrito aquí es testeado modificando datos y buscando "Edge Cases" o fallos (Bugs Fantasmas).
-- **Lógica de Negocio Primero:** Antes de escribir una sola línea de Python, todos los problemas se desglosan en **pseudocódigo abstracto** para diseñar el algoritmo.
+## 🧠 Nuestra Metodología No Convencional
+En la academia tradicional, el aprendizaje suele ser pasivo y desconectado de la realidad. En este repositorio trabajo bajo reglas de arquitectura estrictas que se van documentando **solo a medida que las ponemos a prueba en batalla**:
+
+- **1. La Regla del 3x3:** Por cada 3 conceptos técnicos nuevos, me enfrento a 3 algoritmos de negocio a ciegas (sin tutoriales ni código de apoyo) para obligar a mi cerebro a fallar y asimilar la sintaxis.
+- **2. El Guardián del Óxido (Spaced Repetition):** Ningún lenguaje o herramienta se deja atrás. Si hoy aprendo SQL, el sistema me obliga a resolver pipelines ETL usando lógica pura de Python para mantener la memoria muscular viva y forzar la integración.
+- **3. Data Storytelling Obligatorio:** Un script que compila sin errores pero no da explicaciones, no sirve en el mundo real. Todo ejercicio en este repositorio incluye obligatoriamente una conclusión de negocio (Storytelling) explicando qué decisión estratégica debería tomar la empresa.
+- **4. Arquitectura antes que Sintaxis:** Ninguna línea de código se escribe sin antes desglosar el problema en pseudocódigo abstracto o debatir el diagrama de la base de datos (DER).
+- **5. El Protocolo de Freno (Nueva Regla de Oro):** Cada vez que se abre un tema nuevo, el mentor debe releer todas las reglas para evitar omisiones y asegurar que no queden vacíos técnicos en el camino. Cero prisa.
 
 ---
 
