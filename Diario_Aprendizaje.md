@@ -88,3 +88,26 @@ Este es el espacio personal para forzar a mi cerebro a traducir el código a con
 1. *La Trinidad*: `INSERT`, `UPDATE`, `DELETE`.
 2. *Comportamiento*: Estos comandos son ejecutores. Van a la bóveda, inyectan un nuevo empleado `(INSERT)`, borran al HDMI `(DELETE)` o cambian un sueldo `(UPDATE)`.
 3. *Protocolo en Python*: Estos comandos trabajan en las sombras. Hacen el trabajo sucio y se callan. NO devuelven tablas, por lo que el *fetchall()* no funciona con ellos. Solo requieren una cosa para vivir: que selles su obra con `conexion.commit()`.
+
+---
+
+## 📅 Sesión: Arquitectura MVC, Separación de Capas y SQL Avanzado (27/09/2026)
+
+### 🧠 Conceptos Clave:
+
+**1. El Patrón MVC (Modelo-Vista-Controlador)**
+*Una arquitectura profesional separa el software en capas especializadas:*
+*- **La Base de Datos (`database.py`)**: El "Sótano". Su única misión es ejecutar `SELECT`, `INSERT`, `GROUP BY` y hablar con el disco duro.*
+*- **El Modelo (`models.py`)**: El "Cerebro". Aquí viven nuestras clases OOP (ej. `Compra`). Inyecta el ADN con `__init__`, valida las reglas del negocio, y le ordena al sótano qué guardar. Jamás usa `print()` para hablar con el usuario; solo retorna datos o textos crudos (Separación de Responsabilidades).*
+*- **El Controlador (`main.py`)**: El "Cajero Automático". Es lo más tonto posible. Su única misión es mostrar el menú visual (la Vista), atrapar los inputs del usuario, y pasárselos al Cerebro. Atrapa errores con `try/except` para no crashear.*
+
+**2. La Regla de Oro del Big Data: El Motor SQL vs La Memoria RAM de Python**
+*- **Mala Arquitectura:** Hacer un `SELECT *` para traer 10,000 registros crudos a Python y usar un bucle `for` o una List Comprehension para filtrarlos o sumarlos. Esto colapsa la memoria RAM y procesa información inútil.*
+*- **Buena Arquitectura:** Delegar las matemáticas al motor SQL (que está optimizado en C). Si necesitamos una suma o un filtrado, creamos una función específica en la base de datos usando `SUM()`, `COUNT()`, `GROUP BY` y `WHERE`. SQL procesa el trabajo pesado y solo devuelve un ligero paquete con la respuesta.*
+
+**3. El Escudo Protector `?` (Placeholder) vs El Comodín `%` (Wildcard)**
+*- En SQLite3, el símbolo `%` es el comodín para buscar textos parciales (`LIKE '%Atún%'`).*
+*- El símbolo `?` es el marcador de parámetros para Python. Inyectar variables usando `?` empaquetadas en una tupla no es solo un capricho sintáctico; es una armadura de titanio contra ataques de **Inyección SQL**. Obliga al motor a tratar el input estrictamente como texto, impidiendo que hackers ejecuten comandos maliciosos como `"; DROP TABLE;"`.*
+
+**4. El Choque del Doble Print**
+*Un error de arquitectura común al enviar mensajes desde el Modelo al Controlador. La función `print()` en Python es una acción, y su valor de retorno es `None`. Si el Modelo hace un `return print("Error")`, le envía `None` al Controlador. Si el Controlador luego hace un `print()` sobre ese retorno, imprimirá la palabra `None` en pantalla. Solución: El Modelo retorna un simple *f-string*, y el Controlador hace el único `print()`.*
