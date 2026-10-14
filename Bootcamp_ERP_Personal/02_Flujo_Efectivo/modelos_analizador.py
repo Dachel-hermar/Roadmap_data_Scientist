@@ -1,8 +1,12 @@
+import os
 import sys
-sys.path.append(r"C:\Roadmap_data_Scientist\Bootcamp_ERP_Personal")
-sys.path
 
-from models import GastoSupermercado, GastoGato 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+P1_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "01_Inventario_Supermercado"))
+if P1_DIR not in sys.path:
+    sys.path.append(P1_DIR)
+
+from models import GastoSupermercado, GastoGato
 
 import database_financiero
 
