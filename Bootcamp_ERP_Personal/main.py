@@ -38,43 +38,68 @@ Tu Misión:
 # ==========================================
 # ESCRIBE TU CONTROLADOR AQUÍ
 # ==========================================
-from models import Compra
+from models import GastoGato, GastoSupermercado
 while True:
     print(f'{"=="*20}CARGANDO OPCIONES{"=="*20}') 
-    print(f"ELIGE UNA DE LAS SIGUIENTES OPCIONES\n 1. Registrar una nueva compra\n 2. Ver gasto total global\n 3. Ver gasto por producto (agrupado)\n 4. Buscar cuánto gasté en un producto específico\n 5. Consultar la cantidad de productos por Supermercado\n 6. Cantidad gastado por super\n 7.Salir ")
     try:
+        tabla= int(input(f"¿A quien pertenece este gasto?\n 1. GastoSupermercado\n 2. GastoGato\n "))
+
+        if tabla==1:
+            tabla=GastoSupermercado
+            departamento= "productos"
+        elif tabla==2:
+            tabla=GastoGato
+            departamento= "gastos_gato"
+        else:
+            print("Opción inválida. Por favor, elige 'GastoSupermercado' o 'GastoGato'.")
+        
+
+        print(f"ELIGE UNA DE LAS SIGUIENTES OPCIONES\n 1. Registrar una nueva compra\n 2. Ver gasto total global\n 3. Ver gasto por producto (agrupado)\n 4. Buscar cuánto gasté en un producto específico\n 5. Consultar la cantidad de productos por Supermercado\n 6. Cantidad gastado por super\n 7. Borrar registro\n 8. Modificar precio\n 9. Salir")
         opcion=int(input("ELIGA UNA OPCIÓN:   "))
         if opcion ==1:
             nombre=input("Agregue el nombre del producto:  ").title()
+            cantidad=int(input("Agregue la cantidad del producto:  "))
             precio=float(input("Agregue el valor del producto:  "))
             supermercado=input("Agregue el nombre del Super:  ").title()
             fecha= input("Agregue la fecha:  ")
-            nueva_compra = Compra(nombre, precio, supermercado, fecha)
+            nueva_compra = tabla(nombre,cantidad,  precio,  supermercado, fecha)
             nueva_compra.guardar_en_sql()
 
         if opcion==2:
-            print(Compra.gasto_total())
+            print(tabla.gasto_total(departamento))
 
         if opcion==3:
-            print(Compra.valor_total_por_producto())
+            print(tabla.valor_total_por_producto(departamento))
 
         if opcion==4:
-            product_name=input("Ingresa el nombre del producto que quieas consultar:  ")
-            print(Compra.cuanto_hemos_gastado_en(product_name))
+            product_name=input("Ingresa el nombre del producto que quieas consultar:  ").title()
+            print(tabla.cuanto_hemos_gastado_en(departamento, product_name))
        
                   
         if opcion==5:
-            print(Compra.cantidad_por_super())
+            print(tabla.cantidad_por_super(departamento))
 
         if opcion==6:
-            print(Compra.total_por_super())
+            print(tabla.total_por_super(departamento))
+
 
         if opcion==7:
+            id_registro = int(input("Ingrese el ID del registro que desea eliminar: "))
+            tabla.borrar_registro(departamento, id_registro)
+            print(f"Registro con ID {id_registro} eliminado exitosamente.")
+
+        if opcion==8:
+            id_registro = int(input("Ingrese el ID del registro que desea modificar: "))
+            nuevo_precio = float(input("Ingrese el nuevo precio: "))
+            tabla.modificar_precio(departamento, id_registro, nuevo_precio)
+            print(f"Registro con ID {id_registro} modificado exitosamente. Nuevo precio: {nuevo_precio}")
+
+        if opcion==9:
             print("HASTA PRONTO")
             break
                   
     except Exception as e:
-        print("Se ha detectado un error {e}, por favor compruebe, el dato introducido")
+        print(f"Se ha detectado un error {e}, por favor compruebe, el dato introducido")
         break
 
 

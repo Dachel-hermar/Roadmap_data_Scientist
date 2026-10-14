@@ -44,84 +44,112 @@ Conectar -> Cursor -> Ejecutar -> Commit (si es DML) -> Cerrar.
 # ==========================================
 # ESCRIBE TU CÓDIGO AQUÍ
 # ==========================================
-import sqlite3
+import psycopg2
+from dotenv import load_dotenv
+import os
+# Esto abre la caja fuerte del archivo .env al encender el sistema
+load_dotenv()
+
 
 def conectar():
-    conexion= sqlite3.connect(r"C:\Roadmap_data_Scientist\Bootcamp_ERP_Personal\inventario.db")
+    DATABASE_URL = os.getenv("DATABASE_URL")
+    conexion = psycopg2.connect(DATABASE_URL)
     return conexion
 
-def crear_tabla_productos():
+def crear_tabla_productos(tabla):
     conexion_db= conectar()
     cursor= conexion_db.cursor()
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS productos(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cursor.execute(f'''
+    CREATE TABLE IF NOT EXISTS {tabla}(
+    id SERIAL PRIMARY KEY,
     nombre TEXT NOT NULL,
+    cantidad INTEGER,
     precio REAL,
     supermercado TEXT,
     fecha DATE
 
     )
     ''')
+    
     conexion_db.commit() 
     conexion_db.close()
 
-def insertar_producto(nombre, precio, supermercado, fecha):
+def crear_nueva_columnas(tabla, columna, tipo, predeterminado=None):
+    conexion_db= conectar()
+    cursor= conexion_db.cursor()
+    # Vamos a verificar que la columna no exista antes de intentar crearla
+    nueva_columna=cursor.execute(f'''
+    ALTER TABLE {tabla}
+    ADD COLUMN {columna} {tipo} DEFAULT {predeterminado}
+
+    ''')
+    conexion_db.commit() 
+    conexion_db.close()
+
+def insertar_producto(tabla,nombre, cantidad, precio, supermercado, fecha):
     conex= conectar()
     cursor= conex.cursor()
-    cursor.execute('''
-    INSERT INTO productos (nombre, precio, supermercado, fecha) 
-    VALUES (?, ?, ?, ?)
-''', (nombre, precio, supermercado, fecha))
+    cursor.execute(f'''
+    INSERT INTO {tabla} (nombre, cantidad, precio, supermercado, fecha) 
+    VALUES (%s, %s, %s, %s, %s)
+''', (nombre, cantidad, precio,  supermercado, fecha))
     conex.commit()
     conex.close()
 
-def consultar_gasto_global():
+def borrar_registros(tabla, id_registro):
+    conexion=conectar()
+    cursor=conexion.cursor()
+    cursor.execute(f"DELETE FROM {tabla} WHERE id = %s", (id_registro,))
+    conexion.commit()
+    conexion.close()
+
+def modificar_precio(tabla,id_registro,nuevo_precio):
+    conexion=conectar()
+    cursor=conexion.cursor()
+    cursor.execute(f"UPDATE {tabla} SET precio = %s WHERE id = %s", (nuevo_precio, id_registro))
+    conexion.commit()
+    conexion.close()
+
+def consultar_gasto_global(tabla):
     conexion=conectar()
     cursor= conexion.cursor()
-    cursor.execute("SELECT ROUND(SUM(precio),2) AS gasto_total_global FROM productos")
+    cursor.execute(f"SELECT ROUND(SUM(cantidad * precio):: numeric,2) AS gasto_total_global FROM {tabla}")
     producto= cursor.fetchall()
     conexion.close()
     return producto
 
-def gasto_por_producto():
+def gasto_por_producto(tabla):
     conexion= conectar()
     cursor= conexion.cursor()
-    cursor.execute("SELECT nombre, ROUND(SUM(precio),2) AS gasto_total FROM productos GROUP BY nombre")
+    cursor.execute(f"SELECT nombre, ROUND(SUM(cantidad * precio):: numeric,2) AS gasto_total FROM {tabla} GROUP BY nombre")
     gasto=cursor.fetchall()
     conexion.close()
     return gasto
 
-def registros_por_productos():
+def registros_por_productos(tabla):
     conexion=conectar()
     cursor= conexion.cursor()
-    cursor.execute("SELECT nombre, COUNT(nombre) AS total_de_productos, supermercado FROM productos GROUP BY nombre ")
+    cursor.execute(f"SELECT nombre,supermercado, SUM(cantidad) AS total_de_productos FROM {tabla} GROUP BY nombre, supermercado")
     cantidad= cursor.fetchall()
     conexion.close()
     return cantidad
 
-def consultar_producto_especifico(nombre_del_producto):
+def consultar_producto_especifico(tabla, nombre_del_producto):
     conexion=conectar()
     cursor=conexion.cursor()
-    cursor.execute("SELECT nombre, ROUND(SUM(precio),2) FROM productos WHERE nombre LIKE ?",(f"%{nombre_del_producto}%",))
+    cursor.execute(f"SELECT nombre, ROUND(SUM(cantidad * precio)::numeric,2) FROM {tabla} WHERE nombre ILIKE %s GROUP BY nombre",(f"%{nombre_del_producto}%",))
     resutado=cursor.fetchall()
     conexion.close()
     return resutado
 
-def total_gastado_por_supermercado():
+def total_gastado_por_supermercado(tabla):
     conexion=conectar()
     cursor=conexion.cursor()
-    cursor.execute("SELECT supermercado, ROUND(SUM(precio),2) AS total_super FROM productos GROUP BY supermercado")
+    cursor.execute(f"SELECT nombre, supermercado, ROUND(SUM(cantidad * precio)::numeric,2) AS total_super FROM {tabla} GROUP BY supermercado, nombre")
     resumen=cursor.fetchall()
     conexion.close()
     return resumen
 
 
 if __name__ == '__main__':
-    crear_tabla_productos()
-    print (consultar_gasto_global())
-    print(gasto_por_producto())
-    print(registros_por_productos())
-    print(consultar_producto_especifico("Pollo"))
-      
-    print(f"El Total por supermercado es:{total_gastado_por_supermercado()}")
+    crear_nueva_columnas("gasto")

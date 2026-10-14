@@ -43,14 +43,17 @@ Tu Misión:
 # ==========================================
 import database
 
-class Compra:
+class GastoBase:
     # 1. El ADN entra directo en el nacimiento
-    def __init__(self, nombre, precio, supermercado, fecha):
+    def __init__(self,tabla, nombre, cantidad, precio,  supermercado, fecha):
         self.nombre = nombre
         self.precio = precio
+        self.cantidad = cantidad
         self.supermercado = supermercado
         self.fecha = fecha
-        database.crear_tabla_productos() # (Garantizamos que la BD exista)
+        self.tabla = tabla
+        database.crear_tabla_productos(tabla) # (Garantizamos que la BD exista)
+       
 
     # 2. El método de acción ya NO necesita pedir parámetros
     def guardar_en_sql(self):
@@ -59,47 +62,92 @@ class Compra:
             return
         
         # El objeto envía su PROPIO ADN a la base de datos
-        database.insertar_producto(self.nombre, self.precio, self.supermercado, self.fecha)
+        database.insertar_producto(self.tabla, self.nombre, self.cantidad, self.precio, self.supermercado, self.fecha)
         print("¡Compra registrada en el disco duro!")
 
     @staticmethod
-    def valor_total_por_producto():
-        return database.gasto_por_producto()
+    def valor_total_por_producto(tabla):
+        respuesta= database.gasto_por_producto(tabla)
+        resultado= "Reporte de Gastos:\n"
+        for item in respuesta:
+            nombre_producto= item[0]
+            gasto_total= item[1]
+            resultado += f"En {nombre_producto} has gastado un total de €{gasto_total}\n"
+        return resultado
     
     @staticmethod
-    def cantidad_por_super():
-        return database.registros_por_productos()
+    def cantidad_por_super(tabla):
+        respuesta=database.registros_por_productos(tabla)
+        resultado= "Reporte de Registros:\n"
+        for item in respuesta:
+            nombre_producto= item[0]
+            supermercado= item[1]
+            cantidad_total= item[2]
+            resultado += f"En {supermercado} has comprado un total de {cantidad_total} unidades de {nombre_producto}\n"
+        return resultado
 
     @staticmethod
-    def gasto_total():
-        gasto=database.consultar_gasto_global()
-        return gasto
+    def gasto_total(tabla):
+        gasto = database.consultar_gasto_global(tabla)
+        total_limpio = gasto[0][0]
+        return f"Tu gasto histórico global es de: €{total_limpio}"
       
     @staticmethod
-    def cuanto_hemos_gastado_en(nombre_del_producto):
+    def cuanto_hemos_gastado_en(tabla, nombre_del_producto):
     # La fábrica recibe la palabra y busca en SQL
-      respuesta=database.consultar_producto_especifico(nombre_del_producto)
-      if respuesta[0][0] is None:
+      respuesta=database.consultar_producto_especifico(tabla,nombre_del_producto)
+      if len(respuesta) == 0:
           return f"El producto {nombre_del_producto} no existe."
       else:
-          return respuesta
+          # Sacamos el nombre y el precio de la caja Decimal
+          nombre_producto = respuesta[0][0]
+          gasto_total = respuesta[0][1]
+          
+          # Armamos un mensaje elegante y limpio
+          return f"En {nombre_producto} has gastado un total de €{gasto_total}"
       
     
     @staticmethod
-    def total_por_super():
-        return database.total_gastado_por_supermercado()
+    def total_por_super(tabla):
+        respuesta = database.total_gastado_por_supermercado(tabla)
+        resultado = "Reporte de Gastos por Supermercado:\n"
+        for item in respuesta:
+            supermercado = item[0]
+            total_gastado = item[1]
+            resultado += f"En {supermercado} has gastado un total de €{total_gastado}\n"
+        return resultado
 
 
-       
-            
+    @staticmethod
+    def borrar_registro(tabla, id_registro):
+        database.borrar_registros(tabla, id_registro)
+        print(f"Registro con ID {id_registro} borrado exitosamente.")
+
+    @staticmethod
+    def modificar_precio(tabla,id_registro, nuevo_precio):
+        database.modificar_precio(tabla, id_registro, nuevo_precio)
+        print(f"Registro con ID {id_registro} modificado exitosamente. Nuevo precio: {nuevo_precio}")
+
+class GastoSupermercado(GastoBase):
+    def __init__(self, nombre, cantidad, precio, supermercado, fecha):
+        super().__init__("productos", nombre, cantidad, precio, supermercado, fecha)
         
+
+class GastoGato(GastoBase):
+    def __init__(self, nombre, cantidad, precio, supermercado, fecha):
+        super().__init__("gastos_gato", nombre, cantidad, precio, supermercado, fecha)
+
+
+
+
+
 if __name__ == '__main__':
-    # Nace el objeto (Ya sabe que es un Atún)
-   compra_1 = Compra("Atún", 2.80, "Dia", '2026-09-27')
-   # El objeto se guarda a sí mismo en SQL
-   compra_1.guardar_en_sql()
-   # Le preguntas a la pared de la fábrica el total global
-   print(Compra.gasto_total())
-   print(Compra.cuanto_hemos_gastado_en("Arroz"))
-   print(Compra.total_por_super())
-   
+    # Prueba de la clase GastoBase
+    mi_gato = GastoGato("Pienso", 2, 14.50, "Kiwoko", "2026-10-06")
+    mi_gato.guardar_en_sql()
+    print(mi_gato.gasto_total("gastos_gato"))
+
+
+    mi_compra = GastoSupermercado("Leche", 2, 1.50, "Mercadona", "2026-09-25")
+    mi_compra.guardar_en_sql()
+    print(mi_compra.valor_total_por_producto("productos"))
