@@ -111,3 +111,46 @@ Este es el espacio personal para forzar a mi cerebro a traducir el código a con
 
 **4. El Choque del Doble Print**
 *Un error de arquitectura común al enviar mensajes desde el Modelo al Controlador. La función `print()` en Python es una acción, y su valor de retorno es `None`. Si el Modelo hace un `return print("Error")`, le envía `None` al Controlador. Si el Controlador luego hace un `print()` sobre ese retorno, imprimirá la palabra `None` en pantalla. Solución: El Modelo retorna un simple *f-string*, y el Controlador hace el único `print()`.*
+
+---
+
+## 📅 Sesión: Inmersión en Data Science, Pandas y Estadística Descriptiva (21/10/2026)
+
+### 🧠 Conceptos Clave y Lecciones Aprendidas:
+
+**1. Arquitectura de Herramientas: Kernel vs. Entorno Virtual (`venv`)**
+- En Jupyter Notebooks (`.ipynb`), el código se ejecuta celda por celda de forma modular gracias al **Kernel** (`ipykernel`), un proceso vivo en memoria RAM.
+- **El error clásico del Data Scientist novato:** Tener instaladas las librerías en un `venv` pero ejecutar el notebook con el Python global del sistema, lo que genera `ModuleNotFoundError: No module named 'pandas'`.
+- **Fallo de Service Worker en VS Code:** Si VS Code muestra `Failed to register a ServiceWorker: The document is in an invalid state`, es un cuelgue del motor Chromium interno de Electron; se resuelve cerrando la ventana completa de VS Code o recargando con `Ctrl + Shift + P` -> `Developer: Reload Window`.
+
+**2. Anatomía de Pandas: `pd.Series` frente a `pd.DataFrame`**
+- Una `Series` es una estructura unidimensional (1D) compuesta de Valores + Índice.
+- Un `DataFrame` es una estructura bidimensional (2D) que opera conceptualmente como un diccionario de `Series` sincronizadas por el mismo índice.
+
+**3. El Choque Estadístico Fundamental: Media Aritmética vs. Mediana**
+- En un dataset de 10.000 ventas de retail, la media de gasto fue de **216,21 €** mientras que la mediana real fue de solo **50,91 €**.
+- **Sesgo Positivo (Asimetría hacia la Derecha / Right-Skewed):** Ocurre cuando la Media > Mediana. La media es ultra-sensible a valores atípicos (*outliers*), inflando la percepción de ingresos. La mediana es un estadístico robusto que refleja con fidelidad el comportamiento del cliente típico.
+- Conclusión para CFO: Presupuestar asumiendo que cada cliente gasta 216 € llevaría a la quiebra comercial; el 50% de los clientes gasta 50,91 € o menos.
+
+**4. Detección Vectorizada de Nulos**
+- En lugar de restar a mano o usar calculadoras, en Pandas combinamos dos métodos vectorizados: `df.isnull().sum()` para contar los `True` de valores faltantes por columna, y `(df.isnull().mean() * 100).round(2)` para medir su porcentaje.
+
+**5. Identificación Automatizada con `.idxmax()` y `.max()`**
+- `.max()` devuelve el valor numérico máximo (ej. 2.072 transacciones).
+- `.idxmax()` (*Index of Max*) devuelve la etiqueta del índice asociada a dicho máximo (ej. categoría `'Alimentos'`).
+- **Optimización de memoria:** En datasets de millones de filas, se calcula el recuento una sola vez (`conteo = df['col'].value_counts()`) y luego se extrae el `.idxmax()` y `.max()`, evitando duplicar el tiempo de CPU.
+
+**6. Indexación Booleana (El `WHERE` de SQL en Pandas)**
+- Las operaciones de filtrado se realizan evaluando condiciones lógicas vectorizadas (Máscaras Booleanas).
+- Para filtros multivariables:
+  - Se sustituye el `AND` por **`&`** y el `OR` por **`|`**.
+  - **La regla de los paréntesis:** Cada condición DEBE ir entre paréntesis `(df['city'] == 'Madrid') & (df['total_spend'] > 500)` debido a la precedencia del operador bitwise en Python.
+
+**7. Agrupaciones: El Patrón Split-Apply-Combine (`groupby`)**
+- El equivalente exacto al `GROUP BY` de SQL es `df.groupby('city')['total_spend'].agg(['count', 'sum', 'median', 'mean'])`.
+- Ordenación con `.sort_values(by='sum', ascending=False)`.
+- **La Paradoja de Negocio:** 
+  - **Madrid** lidera en recaudación total (757.454 €) por volumen de compras (3.550 pedidos).
+  - **Barcelona** parece tener clientes más gastadores si se mira solo la media (223,00 € vs 213,37 €).
+  - Pero al auditar la mediana (**52,09 € en Madrid vs 51,34 € en Barcelona**), se descubre que el cliente mediano de Madrid gasta más; la media de Barcelona estaba inflada por compras corporativas atípicas (*outliers*).
+- En Jupyter, para presentar tablas interactivas con formato HTML se utiliza `display(dataframe)` o se deja la variable al final de la celda, evitando el texto plano de `print()`.
