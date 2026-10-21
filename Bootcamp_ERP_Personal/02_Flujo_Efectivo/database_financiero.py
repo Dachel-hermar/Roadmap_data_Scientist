@@ -110,7 +110,13 @@ def consultar_gastos_vs_metas():
     return resultado
 
 
-
+def obtener_todos_los_registros(tabla):
+    conexion = conectar()
+    cursor = conexion.cursor()
+    cursor.execute(f"SELECT concepto, monto, fecha, categoria FROM {tabla}")
+    filas = cursor.fetchall()
+    conexion.close()
+    return filas
 
 
 if __name__ == "__main__":
