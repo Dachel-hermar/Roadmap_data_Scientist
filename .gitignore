@@ -1,5 +1,6 @@
 Comandos_Magicos_Antigravity.md
 venv/
+.venv/
 __pycache__/
 *.db
 caja fuerte
