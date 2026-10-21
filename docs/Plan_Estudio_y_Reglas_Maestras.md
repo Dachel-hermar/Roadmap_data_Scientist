@@ -64,11 +64,14 @@ Hemos fusionado tus Fases temporales con los "Stages" temáticos para crear un c
 - **Mes 9: Modelado Base y Despliegue.** Feature Engineering (Stage 10) y Machine Learning con Scikit-Learn (Stage 11).
   - 🛠️ **Proyecto 3 (El Proyecto del Mes 9):** Combina todo lo anterior + Interfaz gráfica/Web/App. Debe ser entendible para un amigo no técnico. Será la punta de lanza de tu portafolio.
 
-### 🔄 Fase 5: Ingeniería y Refinamiento (Mes 10)
-*Objetivo: Trabajar como un profesional de software.*
-- Control de Versiones (Git + GitHub - Stage 3).
-- Evaluación de Modelos & Hyperparameter Tuning (Stage 12).
-- Aplicación de Git a los proyectos anteriores para refactorizarlos y prepararlos para el mundo real.
+### 🔄 Fase 5: MLOps, Ingeniería y Producción (Mes 10)
+*Objetivo: Llevar modelos predictivos de celdas de prueba a sistemas en producción de nivel empresarial.*
+- **1. Model Serving & APIs:** Creación de microservicios con **FastAPI** para exponer los modelos predictivos mediante endpoints REST consumibles por cualquier aplicación o CRM.
+- **2. Contenedores con Docker:** Empaquetar pipelines de datos y modelos en imágenes reproducibles e independientes del sistema operativo.
+- **3. Experiment Tracking & Model Registry:** Uso de **MLflow** para registrar experimentos, comparar métricas ($R^2$, F1-Score, Curva ROC), versionar modelos y gestionar su ciclo de vida (*Staging* vs. *Production*).
+- **4. Data Version Control (DVC) & CI/CD:** Automatización de tests de datos y validación de modelos con **GitHub Actions**.
+- **5. Despliegue en la Nube:** Publicación del servicio en plataformas cloud (Render / Railway / AWS) conectado a interfaces interactivas en **Streamlit**.
+- **6. Monitoreo en Producción:** Estrategias para detectar degradación del modelo en el tiempo (*Data Drift* y *Concept Drift*).
 
 ### 🚀 Fase 6: Especialización, Big Data y Vanguardia (Mes 11 - Mes 12)
 *Objetivo: Escalar el procesamiento, IA Avanzada y adaptación al mercado.*
