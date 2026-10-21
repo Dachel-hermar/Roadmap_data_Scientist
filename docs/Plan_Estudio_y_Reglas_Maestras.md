@@ -56,6 +56,11 @@ Hemos fusionado tus Fases temporales con los "Stages" temáticos para crear un c
 
 ### 📊 Fase 4: Datos, Matemáticas y Proyectos (Mes 7 - Mes 9)
 *Objetivo: Construir el portafolio aplicando el ciclo de vida del dato.*
+- **Entorno de Trabajo Profesional & Data Tooling (VS Code & Jupyter):**
+  - **Gestión y Selección de Kernels:** Conexión de VS Code con entornos virtuales (`venv`), configuración de `ipykernel` y resolución del clásico error `ModuleNotFoundError`.
+  - **Atajos y Fluidez en Notebooks:** Modo Comando vs. Modo Edición (`Esc` / `Enter`), ejecución ágil (`Shift+Enter`, `Ctrl+Enter`), creación/eliminación de celdas (`A`, `B`, `DD`).
+  - **Inspección de Datos en Vivo:** Uso de *VS Code Variable Viewer* y *Data Viewer* para explorar DataFrames sin saturar la terminal.
+  - **Buenas Prácticas en Notebooks:** Orden lineal de ejecución, reinicio de Kernel (*Restart Kernel & Run All*) para garantizar reproducibilidad científica.
 - **Mes 7: Bases Científicas.** Matemáticas (Estadística, Probabilidad, Álgebra Lineal - Stage 4) + Numpy y Pandas (Stage 5) + Visualización de Datos (Stage 6).
   - 🧠 **Fundamentos Científicos:** Creación y Testeo de Hipótesis (Inferencia Estadística, A/B Testing, Valores-P).
   - 🛠️ **Proyecto 1:** Automatizar algo de tu propia vida.

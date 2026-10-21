@@ -50,8 +50,13 @@ Roadmap_data_Scientist/
 │   ├── 🗄️ Fase_3_Bases_de_Datos_SQL/      # SQL Profundo (CRUD, HAVING, Subqueries)
 │   └── 🧬 Fase_4_Orientada_a_Objetos/     # POO Pura (Dunder methods, Herencia, Polimorfismo)
 │
+├── 📂 Fase_4_Analisis_Datos_Pandas/        # Ciencia de Datos, EDA & Estadística Descriptiva
+│   ├── 📁 datasets/                       # Datasets masivos del mundo real (Kaggle)
+│   └── 📓 01_Fundamentos_Pandas_y_Estadistica.ipynb # Laboratorio de análisis retail (10.000 filas)
+│
 ├── 📂 docs/                               # Documentación Técnica & Bitácora de Aprendizaje
-│   ├── 📜 Plan_Estudio_y_Reglas_Maestras.md# El Contrato de 12 Meses y las 16 Reglas
+│   ├── 📜 Plan_Estudio_y_Reglas_Maestras.md# El Contrato de 12 Meses, MLOps y Reglas Maestras
+│   ├── 🛠️ Guia_VSCode_y_Notebooks.md     # Guía técnica: Kernels, venv, Data Viewer y Atajos
 │   ├── 🗺️ Plan_de_Implementacion.md       # Pliego de condiciones de los 10 Proyectos
 │   ├── 📓 Diario_Aprendizaje.md           # Explicaciones conceptuales y reflexiones
 │   └── 📍 project_state.md                # Bitácora viva de estado y próximos pasos
