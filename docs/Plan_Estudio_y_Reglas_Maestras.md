@@ -66,12 +66,13 @@ Hemos fusionado tus Fases temporales con los "Stages" temáticos para crear un c
 
 ### 🔄 Fase 5: MLOps, Ingeniería y Producción (Mes 10)
 *Objetivo: Llevar modelos predictivos de celdas de prueba a sistemas en producción de nivel empresarial.*
-- **1. Model Serving & APIs:** Creación de microservicios con **FastAPI** para exponer los modelos predictivos mediante endpoints REST consumibles por cualquier aplicación o CRM.
-- **2. Contenedores con Docker:** Empaquetar pipelines de datos y modelos en imágenes reproducibles e independientes del sistema operativo.
-- **3. Experiment Tracking & Model Registry:** Uso de **MLflow** para registrar experimentos, comparar métricas ($R^2$, F1-Score, Curva ROC), versionar modelos y gestionar su ciclo de vida (*Staging* vs. *Production*).
-- **4. Data Version Control (DVC) & CI/CD:** Automatización de tests de datos y validación de modelos con **GitHub Actions**.
-- **5. Despliegue en la Nube:** Publicación del servicio en plataformas cloud (Render / Railway / AWS) conectado a interfaces interactivas en **Streamlit**.
-- **6. Monitoreo en Producción:** Estrategias para detectar degradación del modelo en el tiempo (*Data Drift* y *Concept Drift*).
+- **1. Control de Versiones Avanzado (Git & GitHub Enterprise):** Estrategias de ramificación profesional (*GitFlow*, *Trunk-based*), gestión de Pull Requests, resolución de conflictos de merge complejos, etiquetado de versiones semánticas (*SemVer Tags*) y revisiones de código (*Code Reviews*).
+- **2. Model Serving & APIs:** Creación de microservicios con **FastAPI** para exponer los modelos predictivos mediante endpoints REST consumibles por cualquier aplicación o CRM en tiempo real.
+- **3. Contenedores con Docker:** Empaquetar pipelines de datos y modelos en imágenes reproducibles e independientes del sistema operativo.
+- **4. Experiment Tracking & Model Registry:** Uso de **MLflow** para registrar experimentos, comparar métricas ($R^2$, F1-Score, Curva ROC), versionar modelos y gestionar su ciclo de vida (*Staging* vs. *Production*).
+- **5. Data Version Control (DVC) & CI/CD:** Versionado de grandes volúmenes de datos con **DVC** y automatización de pipelines y tests con **GitHub Actions**.
+- **6. Despliegue en la Nube:** Publicación del servicio en plataformas cloud (Render / Railway / AWS) conectado a interfaces interactivas en **Streamlit**.
+- **7. Monitoreo en Producción:** Estrategias para detectar degradación del modelo en el tiempo (*Data Drift* y *Concept Drift*).
 
 ### 🚀 Fase 6: Especialización, Big Data y Vanguardia (Mes 11 - Mes 12)
 *Objetivo: Escalar el procesamiento, IA Avanzada y adaptación al mercado.*
